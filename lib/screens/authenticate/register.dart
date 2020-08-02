@@ -72,7 +72,6 @@ class _RegisterState extends State<Register> {
                               TextFormField(
                                 textCapitalization:
                                     TextCapitalization.characters,
-                                keyboardType: TextInputType.emailAddress,
                                 textInputAction: TextInputAction.next,
                                 validator: NameValidator.validate,
                                 onFieldSubmitted: (_) =>
@@ -207,9 +206,9 @@ class _RegisterState extends State<Register> {
                                         setState(() {
                                           loading = true;
                                         });
-                                        dynamic result =
-                                            await _auth.signupEmailPass(
-                                                fullname, email, password);
+                                        dynamic result = await _auth
+                                            .createUserWithEmailAndPassword(
+                                                email, password, fullname);
                                         if (result == null) {
                                           setState(() {
                                             error =

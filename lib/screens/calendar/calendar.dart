@@ -6,11 +6,16 @@ import 'package:spp_app/shared/appdrawer.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class Calendar extends StatefulWidget {
+  final String uid;
+
+  Calendar({Key key, this.uid}) : super(key: key);
   @override
-  _CalendarState createState() => _CalendarState();
+  _CalendarState createState() => _CalendarState(uid);
 }
 
 class _CalendarState extends State<Calendar> {
+  final String uid;
+  _CalendarState(this.uid);
   CalendarController _calendarController;
   Map<DateTime, List<dynamic>> _events;
   List<dynamic> _selectedEvents;

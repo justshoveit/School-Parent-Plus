@@ -4,12 +4,17 @@ import 'package:spp_app/screens/notices/noticedetails.dart';
 import 'package:spp_app/shared/appdrawer.dart';
 
 class Notices extends StatefulWidget {
+  final String uid;
+
+  Notices({Key key, this.uid}) : super(key: key);
   @override
-  _NoticesState createState() => _NoticesState();
+  _NoticesState createState() => _NoticesState(uid);
 }
 
 class _NoticesState extends State<Notices> {
   Future _data;
+  final String uid;
+  _NoticesState(this.uid);
 
   Future getNotices() async {
     var firestore = Firestore.instance;

@@ -3,7 +3,7 @@ import 'package:spp_app/shared/appdrawer.dart';
 
 class WeeklyRoutine extends StatefulWidget {
   final String uid;
-  WeeklyRoutine({Key key, @required this.uid}) : super(key: key);
+  WeeklyRoutine({Key key, this.uid}) : super(key: key);
   @override
   _WeeklyRoutineState createState() => _WeeklyRoutineState(uid);
 }

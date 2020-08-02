@@ -15,6 +15,20 @@ class AuthService {
     return _auth.onAuthStateChanged.map(_userFromFirebaseUser);
   }
 
+  Stream<String> get onAuthStateChanged => _auth.onAuthStateChanged.map(
+        (FirebaseUser user) => user?.uid,
+      );
+
+  // GET UID
+  Future<String> getCurrentUID() async {
+    return (await _auth.currentUser()).uid;
+  }
+
+  Future<String> getCurrentName() async {
+    return (await _auth.currentUser()).displayName;
+  }
+
+  // GET CURRENT USER
   Future getCurrentUser() async {
     return await _auth.currentUser();
   }
@@ -45,18 +59,46 @@ class AuthService {
     }
   }
 
+  Future<String> signInWithEmailAndPassword(
+      String email, String password) async {
+    return (await _auth.signInWithEmailAndPassword(
+            email: email, password: password))
+        .user
+        .uid;
+  }
+
+  Future updateUserName(String name, FirebaseUser currentUser) async {
+    var userUpdateInfo = UserUpdateInfo();
+    userUpdateInfo.displayName = name;
+    await currentUser.updateProfile(userUpdateInfo);
+    await currentUser.reload();
+  }
+
   //signup email
-  Future signupEmailPass(String fullname, String email, String password) async {
+  Future signupEmailPass(String email, String password, String fullname) async {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       FirebaseUser user = result.user;
+      await updateUserName(fullname, result.user);
       return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());
       errors = e.message;
       return null;
     }
+  }
+
+  Future<String> createUserWithEmailAndPassword(
+      String email, String password, String name) async {
+    final authResult = await _auth.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+
+    // Update the username
+    await updateUserName(name, authResult.user);
+    return authResult.user.uid;
   }
 
   //signout
