@@ -54,7 +54,7 @@ class _RegisterState extends State<Register> {
                                 fontFamily: 'ProximaNova',
                                 fontSize: 80.0,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.deepPurple,
+                                color: Color(0xff0129ba),
                               ),
                             ),
                           ),
@@ -92,7 +92,7 @@ class _RegisterState extends State<Register> {
                                   ),
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Colors.deepPurple,
+                                      color: Color(0xff0129ba),
                                     ),
                                   ),
                                 ),
@@ -122,7 +122,7 @@ class _RegisterState extends State<Register> {
                                   ),
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Colors.deepPurple,
+                                      color: Color(0xff0129ba),
                                     ),
                                   ),
                                 ),
@@ -156,7 +156,7 @@ class _RegisterState extends State<Register> {
                                   ),
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide:
-                                        BorderSide(color: Colors.deepPurple),
+                                        BorderSide(color: Color(0xff0129ba)),
                                   ),
                                 ),
                                 obscureText: true,
@@ -188,7 +188,7 @@ class _RegisterState extends State<Register> {
                                   ),
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide:
-                                        BorderSide(color: Colors.deepPurple),
+                                        BorderSide(color: Color(0xff0129ba)),
                                   ),
                                 ),
                                 obscureText: true,
@@ -198,7 +198,7 @@ class _RegisterState extends State<Register> {
                                 height: 60.0,
                                 child: Material(
                                   borderRadius: BorderRadius.circular(30.0),
-                                  color: Colors.deepPurple,
+                                  color: Color(0xff0129ba),
                                   elevation: 5.0,
                                   child: GestureDetector(
                                     onTap: () async {
@@ -249,7 +249,7 @@ class _RegisterState extends State<Register> {
                                     child: Text(
                                       'Sign In',
                                       style: TextStyle(
-                                        color: Colors.deepPurple,
+                                        color: Color(0xff0129ba),
                                         fontFamily: 'ProximaNova',
                                         fontWeight: FontWeight.bold,
                                         decoration: TextDecoration.underline,

@@ -60,7 +60,7 @@ class _SignInState extends State<SignIn> {
                           ),
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: Colors.deepPurple,
+                              color: Color(0xff0129ba),
                             ),
                           ),
                         ),
@@ -98,7 +98,7 @@ class _SignInState extends State<SignIn> {
                           ),
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: Colors.deepPurple,
+                              color: Color(0xff0129ba),
                             ),
                           ),
                         ),
@@ -110,7 +110,7 @@ class _SignInState extends State<SignIn> {
                         height: 60.0,
                         child: Material(
                           borderRadius: BorderRadius.circular(30.0),
-                          color: Colors.deepPurple,
+                          color: Color(0xff0129ba),
                           elevation: 5.0,
                           child: GestureDetector(
                             onTap: () async {
@@ -159,7 +159,7 @@ class _SignInState extends State<SignIn> {
                             child: Text(
                               'Register',
                               style: TextStyle(
-                                color: Colors.deepPurple,
+                                color: Color(0xff0129ba),
                                 fontFamily: 'ProximaNova',
                                 fontWeight: FontWeight.bold,
                                 decoration: TextDecoration.underline,
@@ -224,7 +224,7 @@ Container headerSection() {
                 fontFamily: 'ProximaNova',
                 fontSize: 80.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.deepPurple,
+                color: Color(0xff0129ba),
               ),
             ),
           )
@@ -242,7 +242,7 @@ Container forgotPassword() {
       child: Text(
         'Forgot Password?',
         style: TextStyle(
-            color: Colors.deepPurple,
+            color: Color(0xff0129ba),
             fontFamily: 'ProximaNova',
             fontWeight: FontWeight.bold,
             decoration: TextDecoration.underline),

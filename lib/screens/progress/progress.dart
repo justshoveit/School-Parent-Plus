@@ -57,9 +57,10 @@ class FirstTermResult extends StatelessWidget {
           borderRadius: BorderRadius.circular(12.0),
           color: Color(0xff5a348b),
           gradient: LinearGradient(
-              colors: [Color(0xff7e57c2), Color(0xff4527a0)],
-              begin: Alignment.centerRight,
-              end: Alignment(-1.0, -1.0)), //Gradient
+            colors: [Color(0xff7e57c2), Color(0xff4527a0)],
+            begin: Alignment.centerRight,
+            end: Alignment(-1.0, -1.0),
+          ), //Gradient
         ),
         child: Align(
           alignment: Alignment.center,
@@ -85,7 +86,8 @@ class FirstTermResult extends StatelessWidget {
                                   'First Terminal Result',
                                   style: TextStyle(
                                       fontSize: 25.0,
-                                      fontWeight: FontWeight.bold),
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
                                 ),
                               ),
                               SizedBox(
@@ -95,38 +97,77 @@ class FirstTermResult extends StatelessWidget {
                                 DataColumn(
                                     label: Text(
                                   "Subject",
-                                  style: TextStyle(fontSize: 15.0),
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.white),
                                 )),
                                 DataColumn(
                                     label: Text(
                                   'Grade',
-                                  style: TextStyle(fontSize: 15.0),
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.white),
                                 )),
                                 DataColumn(
                                     label: Text(
                                   'Result',
-                                  style: TextStyle(fontSize: 15.0),
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.white),
                                 )),
                               ], rows: <DataRow>[
                                 DataRow(cells: <DataCell>[
-                                  DataCell(Text('English')),
-                                  DataCell(Text(ds['english'])),
-                                  DataCell(Text('Pass')),
+                                  DataCell(Text(
+                                    'English',
+                                    style: TextStyle(color: Colors.white),
+                                  )),
+                                  DataCell(Text(
+                                    ds['english'],
+                                    style: TextStyle(color: Colors.white),
+                                  )),
+                                  DataCell(Text(
+                                    'Pass',
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                                 ]),
                                 DataRow(cells: <DataCell>[
-                                  DataCell(Text('Nepali')),
-                                  DataCell(Text(ds['nepali'])),
-                                  DataCell(Text('Pass')),
+                                  DataCell(Text(
+                                    'Nepali',
+                                    style: TextStyle(color: Colors.white),
+                                  )),
+                                  DataCell(Text(
+                                    ds['nepali'],
+                                    style: TextStyle(color: Colors.white),
+                                  )),
+                                  DataCell(Text(
+                                    'Pass',
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                                 ]),
                                 DataRow(cells: <DataCell>[
-                                  DataCell(Text('Mathematics')),
-                                  DataCell(Text(ds['maths'])),
-                                  DataCell(Text('Pass')),
+                                  DataCell(Text(
+                                    'Mathematics',
+                                    style: TextStyle(color: Colors.white),
+                                  )),
+                                  DataCell(Text(
+                                    ds['maths'],
+                                    style: TextStyle(color: Colors.white),
+                                  )),
+                                  DataCell(Text(
+                                    'Pass',
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                                 ]),
                                 DataRow(cells: <DataCell>[
-                                  DataCell(Text('Science')),
-                                  DataCell(Text(ds['science'])),
-                                  DataCell(Text('Pass')),
+                                  DataCell(Text(
+                                    'Science',
+                                    style: TextStyle(color: Colors.white),
+                                  )),
+                                  DataCell(Text(
+                                    ds['science'],
+                                    style: TextStyle(color: Colors.white),
+                                  )),
+                                  DataCell(Text(
+                                    'Pass',
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                                 ]),
                               ]),
                               SizedBox(
@@ -139,7 +180,8 @@ class FirstTermResult extends StatelessWidget {
                                     'Final Grade',
                                     style: TextStyle(
                                         fontSize: 18.0,
-                                        fontWeight: FontWeight.bold),
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
                                   ),
                                   SizedBox(
                                     width: 25.0,
@@ -148,7 +190,30 @@ class FirstTermResult extends StatelessWidget {
                                     ds['finalgrade'],
                                     style: TextStyle(
                                         fontSize: 18.0,
-                                        fontWeight: FontWeight.bold),
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  )
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                    'Final GPA',
+                                    style: TextStyle(
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    width: 25.0,
+                                  ),
+                                  Text(
+                                    ds['finalgpa'].toString(),
+                                    style: TextStyle(
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
                                   )
                                 ],
                               )
@@ -282,6 +347,26 @@ class SecondTermResult extends StatelessWidget {
                                       fontWeight: FontWeight.bold),
                                 )
                               ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  'Final GPA',
+                                  style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  width: 25.0,
+                                ),
+                                Text(
+                                  ds['finalgpa'].toString(),
+                                  style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
                             )
                           ],
                         ),
@@ -407,6 +492,26 @@ class ThirdTermResult extends StatelessWidget {
                                 ),
                                 Text(
                                   ds['finalgrade'],
+                                  style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  'Final GPA',
+                                  style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  width: 25.0,
+                                ),
+                                Text(
+                                  ds['finalgpa'].toString(),
                                   style: TextStyle(
                                       fontSize: 18.0,
                                       fontWeight: FontWeight.bold),

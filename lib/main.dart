@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       value: AuthService().user,
       child: MaterialApp(
         theme: ThemeData(
-          primaryColor: Colors.deepPurple,
+          primaryColor: Color(0xff0129ba),
           fontFamily: 'ProximaNova',
         ),
         debugShowCheckedModeBanner: false,

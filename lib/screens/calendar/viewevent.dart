@@ -10,19 +10,26 @@ class EventDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Holiday details'),
+        centerTitle: true,
+        title: Text('Details'),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(15.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
               event.title,
-              style: Theme.of(context).textTheme.headline4,
+              style: TextStyle(
+                fontSize: 25.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            SizedBox(height: 20.0),
-            Text(event.description)
+            SizedBox(height: 15.0),
+            Text(
+              event.description,
+              style: TextStyle(fontSize: 18.0),
+            ),
           ],
         ),
       ),

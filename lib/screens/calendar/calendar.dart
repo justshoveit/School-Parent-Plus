@@ -69,6 +69,7 @@ class _CalendarState extends State<Calendar> {
                     events: _events,
                     calendarController: _calendarController,
                     calendarStyle: CalendarStyle(
+                      selectedColor: Color(0xff0129ba),
                       todayStyle: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18.0,
@@ -85,7 +86,10 @@ class _CalendarState extends State<Calendar> {
                     },
                   ),
                   ..._selectedEvents.map((event) => ListTile(
-                        title: Text(event.title),
+                        title: Text(
+                          event.title,
+                          style: TextStyle(fontSize: 20.0),
+                        ),
                         onTap: () {
                           Navigator.push(
                               context,

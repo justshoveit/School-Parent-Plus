@@ -42,28 +42,39 @@ class _ProfileState extends State<Profile> {
                   padding: EdgeInsets.all(15.0),
                   child: Column(
                     children: <Widget>[
-                      Image.network(
-                        ds['photo'],
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(50.0)),
+                        child: Image.network(
+                          ds['photo'],
+                          width: 200.0,
+                          height: 200.0,
+                        ),
                       ),
-                      ListTile(
-                        title: Center(
-                          child: Text(
-                            'Name:',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20.0,
+                      Stack(
+                        children: <Widget>[
+                          ListTile(
+                            title: Center(
+                              child: Text(
+                                'Name:',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                            ),
+                            subtitle: Center(
+                              child: Text(
+                                ds['name'],
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20.0,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                        subtitle: Center(
-                          child: Text(
-                            ds['name'],
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20.0,
-                            ),
-                          ),
-                        ),
+                        ],
                       ),
                       ListTile(
                         title: Center(

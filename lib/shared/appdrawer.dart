@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:spp_app/screens/assignments/assignments.dart';
 import 'package:spp_app/screens/authenticate/authenticate.dart';
 import 'package:spp_app/screens/calendar/calendar.dart';
+import 'package:spp_app/screens/feedback/feedback.dart';
 import 'package:spp_app/screens/home/home.dart';
 import 'package:spp_app/screens/notices/notices.dart';
 import 'package:spp_app/screens/profile/profile.dart';
@@ -50,7 +51,7 @@ class _AppDrawerState extends State<AppDrawer> {
               backgroundColor: Colors.white,
               child: Icon(
                 Icons.person,
-                color: Colors.deepPurple,
+                color: Color(0xff0129ba),
               ),
             ),
             accountName: Text("${user?.displayName}"),
@@ -75,12 +76,9 @@ class _AppDrawerState extends State<AppDrawer> {
           ListTile(
             title: Text('Weekly Routine'),
             trailing: Icon(Icons.schedule),
-            onTap: () async {
-              FirebaseUser user = await FirebaseAuth.instance.currentUser();
+            onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => WeeklyRoutine(
-                        uid: user.uid,
-                      )));
+                  builder: (BuildContext context) => WeeklyRoutine()));
             },
           ),
           ListTile(
@@ -103,7 +101,7 @@ class _AppDrawerState extends State<AppDrawer> {
           ),
           ListTile(
             title: Text('Notices'),
-            trailing: Icon(Icons.announcement),
+            trailing: Icon(Icons.assessment),
             onTap: () {
               Navigator.pop(context);
               Navigator.of(context).push(MaterialPageRoute(
@@ -118,6 +116,18 @@ class _AppDrawerState extends State<AppDrawer> {
               Navigator.pop(context);
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (BuildContext context) => Progress(
+                        uid: user.uid,
+                      )));
+            },
+          ),
+          ListTile(
+            title: Text('Feedbacks'),
+            trailing: Icon(Icons.feedback),
+            onTap: () async {
+              FirebaseUser user = await FirebaseAuth.instance.currentUser();
+              Navigator.pop(context);
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => Feedbacks(
                         uid: user.uid,
                       )));
             },
