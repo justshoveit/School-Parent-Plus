@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spp_app/screens/authenticate/forgotpassword.dart';
 import 'package:spp_app/services/auth.dart';
 import 'package:spp_app/shared/loading.dart';
 
@@ -43,7 +44,7 @@ class _SignInState extends State<SignIn> {
                         onFieldSubmitted: (_) =>
                             FocusScope.of(context).nextFocus(),
                         validator: (value) =>
-                            value.isEmpty ? 'Enter an email.' : null,
+                            value.isEmpty ? 'Enter and email' : null,
                         onChanged: (value) {
                           setState(() => email = value);
                         },
@@ -104,7 +105,7 @@ class _SignInState extends State<SignIn> {
                         ),
                       ),
                       SizedBox(height: 10.0),
-                      forgotPassword(),
+                      forgotPassword(context),
                       SizedBox(height: 20.0),
                       Container(
                         height: 60.0,
@@ -234,7 +235,7 @@ Container headerSection() {
   );
 }
 
-Container forgotPassword() {
+Container forgotPassword(BuildContext context) {
   return Container(
     alignment: Alignment(1.0, 0.0),
     padding: EdgeInsets.only(top: 15.0, left: 20.0),
@@ -247,6 +248,10 @@ Container forgotPassword() {
             fontWeight: FontWeight.bold,
             decoration: TextDecoration.underline),
       ),
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (BuildContext context) => ForgotPassword()));
+      },
     ),
   );
 }
